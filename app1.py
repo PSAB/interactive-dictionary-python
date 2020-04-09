@@ -7,8 +7,15 @@ def translate(w):
     w = w.lower()
     if w in data:
         return data[w]
+        return 
     elif len(get_close_matches(w, data.keys())) > 0:
-        return 'Did you mean {} instead?'.format(get_close_matches(w, data.keys())[0])
+        response = input('Did you mean {} instead? Y or N'.format(get_close_matches(w, data.keys())[0]))
+        if response == 'Y':
+            return data[get_close_matches(w, data.keys())[0]]
+        elif response == 'N':
+            return "The word doesn't exist. Please double-check it."
+        else:
+            return "Invalid Input. Please try again."
     else:
         return "The word doesn't exist. Please double-check it."
 
