@@ -7,7 +7,6 @@ def translate(w):
     w = w.lower()
     if w in data:
         return data[w]
-        return 
     elif len(get_close_matches(w, data.keys())) > 0:
         response = input('Did you mean {} instead? Y or N'.format(get_close_matches(w, data.keys())[0]))
         if response == 'Y':
