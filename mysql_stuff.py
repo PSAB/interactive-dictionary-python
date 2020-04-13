@@ -7,3 +7,15 @@ con = mysql.connector.connect (
     database = 'ardit700_pm1database'
 )
 
+# Cursor used to navigate DB table:
+cursor = con.cursor()
+
+# query DB
+query = cursor.execute("SELECT * FROM Dictionary WHERE Expression = 'line' ") # Expression, Definition
+results = cursor.fetchall()
+
+if results:
+    for result in results:
+        print(result)
+else:
+    print('word not found')
