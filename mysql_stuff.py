@@ -16,7 +16,6 @@ cursor = con.cursor()
 # query DB
 cursor.execute("SELECT * FROM Dictionary ") # Expression, Definition
 results = cursor.fetchall()
-res_expressions = [x[0] for x in results]
 
 # dictionary forming
 data = defaultdict(list)
@@ -53,14 +52,3 @@ if type(output) == list:
 else:               # If the word doesn't exist, just print the not-found string
     print(output)
 
-
-
-# print(expression_list)
-# print(res_expressions)
-# print(len(results_dict))
-
-# if results:
-#     for result in results:
-#         print(result)
-# else:
-#     print('word not found')
