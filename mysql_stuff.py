@@ -1,6 +1,7 @@
 import mysql.connector
 from collections import defaultdict
 from difflib import get_close_matches
+import pandas as pd
 
 # Remote sql setup
 con = mysql.connector.connect (
@@ -51,4 +52,5 @@ if type(output) == list:
         print(item)
 else:               # If the word doesn't exist, just print the not-found string
     print(output)
+
 
